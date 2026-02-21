@@ -2,7 +2,8 @@ import json
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
-TOKEN = "7972473497:AAHr7fN3GR5cKLilr7UsGEL5EQSuEaHeQVg"
+import os
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 # Загружаем базу совместимости
 with open("compatibility.json", "r", encoding="utf-8") as f:
@@ -48,4 +49,5 @@ def main():
     app.run_polling()
 
 if __name__ == "__main__":
+
     main()
