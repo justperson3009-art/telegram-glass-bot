@@ -1,9 +1,9 @@
-import json
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
 import os
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TOKEN = os.getenv("BOT_TOKEN")
 
 # Загружаем базу совместимости
 with open("compatibility.json", "r", encoding="utf-8") as f:
@@ -53,3 +53,4 @@ if __name__ == "__main__":
     main()
 
 "Remove leaked token + use env var"
+
